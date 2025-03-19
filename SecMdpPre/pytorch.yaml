@@ -1,0 +1,22 @@
+includes:
+  - base.yaml
+targets:
+  - target: /bin
+    createlinks:
+      - src: /opt/python-occlum/bin/python3
+        linkname: python3
+  # python packages
+  - target: /opt
+    copy: 
+      - dirs:
+          - ../python-occlum
+  # python code
+  - target: /
+    copy:
+      - files: 
+          - ../valp
+
+  # - target: /
+  #   copy:
+  #     - files: 
+  #         - ../test_consistency_oram.py
